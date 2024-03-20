@@ -1,0 +1,10 @@
+name: CHAP_example_01
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - chessanalysispipeline
+#  - numpy
+  - pyfai
+#  - fabio
+#  - matplotlib

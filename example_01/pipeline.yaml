@@ -1,0 +1,12 @@
+config:
+  inputdir: input
+  outputdir: output
+pipeline:
+  - common.FabioImageReader:
+      filename: detector_data_*.cbf
+  - common.PyfaiAzimuthalIntegrationProcessor:
+      poni_file: detector.poni
+      npt: 180
+  - common.PyfaiResultsWriter:
+      filename: azimuthally_integrated.npz
+      force_overwrite: true
