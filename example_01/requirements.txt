@@ -1,5 +1,0 @@
-ChessAnalysisPipeline
-numpy
-pyfai
-fabio
-matplotlib
