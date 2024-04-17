@@ -1,0 +1,56 @@
+config:
+  inputdir: input
+  outputdir: output
+  interactive: true
+  log_level: INFO
+
+pipeline:
+
+  # Convert the CHESS style map
+  - pipeline.MultiplePipelineItem:
+      items:
+        - common.SpecReader:
+            spec_config:
+              station: id3a
+              experiment_type: TOMO
+              spec_scans:
+              - spec_file: ../data/hollow_pyramid/spec.log
+                scan_numbers:
+                - 1
+            detector_names:
+              - sim
+            schema: darkfield
+        - common.SpecReader:
+            inputdir: ../data/hollow_pyramid
+            spec_config:
+              station: id3a
+              experiment_type: TOMO
+              spec_scans:
+              - spec_file: spec.log
+                scan_numbers:
+                - 2
+            detector_names:
+              - sim
+            schema: brightfield
+        - common.MapReader:
+            filename: map_id3a_pyramid.yaml
+            detector_names:
+              - sim
+            schema: tomofields
+        - common.YAMLReader:
+            filename: detector_pyramid.yaml
+            schema: tomo.models.Detector
+  - tomo.TomoCHESSMapConverter
+
+  # Full tomography reconstruction
+  - tomo.TomoDataProcessor:
+      reduce_data: True
+      find_center: True
+      reconstruct_data: True
+      combine_data: True
+      outputdir: saved_figs
+      save_figs: 'only'
+  - common.NexusWriter:
+      filename: combined_hollow_pyramid.nxs
+      force_overwrite: true
+
