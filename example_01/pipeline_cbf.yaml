@@ -1,0 +1,12 @@
+config:
+  inputdir: /nfs/chess/user/x-cite/data/example_01/cbf
+  outputdir: ./output_cbf
+pipeline:
+  - common.FabioImageReader:
+      filename: detector_data_*.cbf
+  - common.PyfaiAzimuthalIntegrationProcessor:
+      poni_file: detector_calib.poni
+      npt: 180
+  - common.PyfaiResultsWriter:
+      filename: azimuthally_integrated.npz
+      force_overwrite: true
