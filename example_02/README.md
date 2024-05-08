@@ -23,7 +23,7 @@ two parts:
 
 ## Instructions
 
-### Activate the tomography conda environment
+### Activate the conda environment
 1. `source /nfs/chess/user/x-cite/miniconda3/bin/activate`
 1. `conda activate CHAP_example_02`
 
@@ -42,7 +42,7 @@ beamline.
 `pipeline.yaml` (`interactive: false`) and run the workflow non-interactively.
 1. Output is in newly created `output` directory
 
-### Visualize the output with NeXpy
+### Visualize the output with NeXpy (via NoMachine)
 The output consists of a single NeXus file (`combined_hollow_pyramid.nxs`) containing the
 reconstructed data set as well as all metadata pertaining to the
 reconstruction. Additionally, optional output figures (`.png`) may be save to

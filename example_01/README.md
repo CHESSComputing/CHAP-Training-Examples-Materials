@@ -8,7 +8,7 @@ This example is the least complex. The example pipeline does the following:
 
 ## Instructions
 
-### Activating the tomography conda environment
+### Activate the conda environment
 1. `source /nfs/chess/user/x-cite/miniconda3/bin/activate`
 1. `conda activate CHAP_example_01`
 
@@ -22,7 +22,7 @@ This example is the least complex. The example pipeline does the following:
 1. `CHAP pipeline.yaml`
 1. `ls output`, check for a file named azimuthally_integrated.npz
 
-### Visualize the output with a Jupyter notebook
+### Visualize the output with `matplotlib` (via a Jupyter notebook)
 1. Add the conda environment as a jupyter kernel:
    ```bash
    python -m ipykernel install --user --name=chap_example_01 --display-name "CHAP_example_01"
