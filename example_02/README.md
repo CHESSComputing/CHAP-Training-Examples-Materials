@@ -50,9 +50,9 @@ files, particularly those stored as [NeXus data](http://www.nexusformat.org):
     1. Click on the Terminal icon to open a terminal window
     1. Activate conda environment (see above)
     1. Open the NeXpy GUI by entering in your terminal:
-   ```bash
-   nexpy &
-   ```
+       ```bash
+       nexpy &
+       ```
     1. After the GUI pops up, click File-> Open and navigate to the folder where
 your output `.nxs` file was saved:
         1. Double-click on CLASSE_shortcuts folder
