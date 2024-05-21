@@ -93,5 +93,5 @@ As a demonstration of the reconstruction, there are also movies slicing through 
 1. Click on the "Home" file folder on the NoMachine desktop to open the File Manager.
 1. Enter `/nfs/chess/user/x-cite/data/example_02` directly in the file browser bar on the top.
 1. Double-click on either `ruby_test` or `tick_test`.
-1. Double-click on `recon_z.git`.
+1. Double-click on `recon_z.gif`.
 1. Repeat for the other sample.
