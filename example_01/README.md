@@ -14,10 +14,11 @@ Note that there are two pipelines to choose from in this example: `pipeline_cbf.
     1. `source /nfs/chess/user/x-cite/miniconda3/bin/activate`
     1. `conda activate CHAP_example_01`
 
-1. Process the input data using `CHAP`. In the same terminal used in step 1, run:
-    1. `CHAP pipeline_cbf.yaml` (and/or `CHAP pipeline_h5.yaml`)
-    1. `ls output_cbf` (and/or `ls output_h5`)
-        1.  check for a file named `azimuthally_integrated.npz`
+1. Process the input data using `CHAP`. In the same terminal used in step 1:
+    1. Navigate to your `CHAP-Training-Examples-Materials/example_01` directory
+    1. Run the process: `CHAP pipeline_cbf.yaml` (and/or `CHAP pipeline_h5.yaml`)
+    1. Check the output: `ls output_cbf` (and/or `ls output_h5`)
+        1.  Look for a file named `azimuthally_integrated.npz`
 
 1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)
     1. Add the conda environment as a jupyter kernel. In the same terminal used in step 1 and 2, run:
@@ -31,4 +32,4 @@ Note that there are two pipelines to choose from in this example: `pipeline_cbf.
         1. Double-click on CHAP-Training-Examples-Materials -> example_01
     1. Open the notebook by double-clicking on visualize.ipynb
     1. Select Kernel: choose CHAP_example_01
-    1. Run the cells in order, complete the optional exercises, and the notebook close tab when done.
+    1. Run the cells in order (click the right-triangle button or type Shift-Enter), complete the optional exercises, and the notebook close tab when done.
