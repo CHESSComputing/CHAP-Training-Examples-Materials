@@ -6,6 +6,7 @@ pipeline:
       filename: detector_data_*.cbf
   - common.PyfaiAzimuthalIntegrationProcessor:
       poni_file: detector_calib.poni
+      mask_file: null
       npt: 180
   - common.PyfaiResultsWriter:
       filename: azimuthally_integrated.npz

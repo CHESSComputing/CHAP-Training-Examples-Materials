@@ -7,6 +7,7 @@ pipeline:
       frame: 5
   - common.PyfaiAzimuthalIntegrationProcessor:
       poni_file: detector_calib.poni
+      mask_file: detector_mask.tif
       npt: 180
   - common.PyfaiResultsWriter:
       filename: azimuthally_integrated.npz
