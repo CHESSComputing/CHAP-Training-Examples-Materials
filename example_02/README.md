@@ -43,6 +43,7 @@ an output directory specified in the pipeline file and can be viewed directly by
 1. Use NoMachine to visualize the output data with [NeXpy](https://nexpy.github.io/nexpy/), a high-level python interface to HDF5
 files, particularly those stored as [NeXus data](http://www.nexusformat.org):
     1. Browse to https://nomachine.classe.cornell.edu
+        - OR install and connect using the [NoMachine client](https://wiki.classe.cornell.edu/CHESS/RemoteUserGuide)
     1. Log in with your CLASSE ID
     1. Connect to `lnx201` (general purpose Linux login node)
     1. Select "Create a new virtual desktop"
