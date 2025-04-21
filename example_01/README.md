@@ -8,6 +8,25 @@ This example is the least complex. The example pipelines do the following:
 
 Note that there are two pipelines to choose from in this example: `pipeline_cbf.yaml` and `pipeline_h5.yaml`. They both do the same thing, but each one operates on a different set of input 2D diffraction data. `pipeline_cbf.yaml` will run slightly faster (~3 seconds as opposed to ~1 minute), but the data in this case are synthetic and not very interesting for visualization.
 
+### Physics Motivation
+#### The input data
+The 2D diffraction patterns used as input data for this pipeline represent fairly typical raw data collected during a powder diffraction experiment. In a powder diffraction experiment, the incident X-ray beam is scattered by the sample and the spatial pattern of scattered beam is captured on a 2D area detector. When the incident beam hits the sample at certain angles, the scattered X-rays between different crystal planes are in phase with each other and therefore constructively interfere to produce a signal on the detector. The angle at which this constructive interference can occur is determined by [Bragg's law](https://en.wikipedia.org/wiki/Bragg%27s_law): 
+
+$$n\lambda = 2d\sin{\theta}$$
+
+Where $n \in \mathbb{N}$, $\lambda$ is the wavelength of the incident beam, $d$ is the distance between crystal planes, and $\theta$ is the glancing angle of the incident beam relative to the sample's crystal planes.
+| ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Bragg_diffraction_2.svg/2560px-Bragg_diffraction_2.svg.png) | 
+|:--:| 
+| *By Hydrargyrum - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17543875* |
+| Illustration of Bragg diffraction |
+
+Because the sample is a powder, the diffraction pattern captured by the detector shows _rings_ of diffracted X-rays because the sample contains grains whose crystal planes are oriented at all directions relative to the incident beam.
+| ![](http://pd.chem.ucl.ac.uk/pdnn/diff2/cone.gif) | 
+|:--:| 
+| How a powder diffraction experiment produces ring-like patterns. http://pd.chem.ucl.ac.uk/pdnn/diff2/kinemat2.htm|
+#### Processing the data
+In this particular experiment, we are interested in finding out the intensity of the diffracted X-rays as a function of the radial coordinate going out from the center of the beam -- this can be used to find out things like the distance between the sample's crystal planes. We are _not_ interested in the intensity of diffracted X-rays as a function of the angular coodinate going around each ring -- this would tell us the relative amount of the sample's crystal planes which are oriented in a certain direction (but beacuse our sample is a powder composed of many grains each oriented in an arbitrary direction, there should be no systematic relationship between the angular coordinate around the beam and the intensity of a ring at that angle). So, we reduce each 2D diffraction pattern into a 1D signal by integrating over the angular coordinate in each image, leaving us with intensity as a function of the radial coordinate.
+
 ## Instructions
 
 1. Activate the conda environment. Open a terminal and run:
