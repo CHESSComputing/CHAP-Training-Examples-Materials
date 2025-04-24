@@ -6,8 +6,6 @@ This example is the least complex. The example pipelines do the following:
 1. Azimuthally integrate each diffraction pattern.
 1. Save the resulting Intensity vs. radial coordinate data in .npz format.
 
-Note that there are two pipelines to choose from in this example: `pipeline_cbf.yaml` and `pipeline_h5.yaml`. They both do the same thing, but each one operates on a different set of input 2D diffraction data. `pipeline_cbf.yaml` will run slightly faster (~3 seconds as opposed to ~1 minute), but the data in this case are synthetic and not very interesting for visualization.
-
 ### Physics Motivation
 #### The input data
 The 2D diffraction patterns used as input data for this pipeline represent fairly typical raw data collected during a powder diffraction experiment. In a powder diffraction experiment, the incident X-ray beam is scattered by the sample and the spatial pattern of scattered beam is captured on a 2D area detector. When the incident beam hits the sample at certain angles, the scattered X-rays between different crystal planes are in phase with each other and therefore constructively interfere to produce a signal on the detector. The angle at which this constructive interference can occur is determined by [Bragg's law](https://en.wikipedia.org/wiki/Bragg%27s_law): 
@@ -35,8 +33,8 @@ In this particular experiment, we are interested in finding out the intensity of
 
 1. Process the input data using `CHAP`. In the same terminal used in step 1:
     1. Navigate to your `CHAP-Training-Examples-Materials/example_01` directory
-    1. Run the process: `CHAP pipeline_cbf.yaml` (and/or `CHAP pipeline_h5.yaml`)
-    1. Check the output: `ls output_cbf` (and/or `ls output_h5`)
+    1. Run the process: `CHAP pipeline.yaml` (this should take ~1min to complete)
+    1. Check the output: `ls output`
         1.  Look for a file named `azimuthally_integrated.npz`
 
 1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)

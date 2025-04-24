@@ -1,12 +1,13 @@
 config:
-  inputdir: /nfs/chess/user/x-cite/data/example_01/cbf
-  outputdir: ./output_cbf
+  inputdir: /nfs/chess/user/x-cite/data/example_01/h5
+  outputdir: ./output
 pipeline:
   - common.FabioImageReader:
-      filename: detector_data_*.cbf
+      filename: detector_data_*.h5
+      frame: 5
   - common.PyfaiAzimuthalIntegrationProcessor:
       poni_file: detector_calib.poni
-      mask_file: null
+      mask_file: detector_mask.tif
       npt: 180
   - common.PyfaiResultsWriter:
       filename: azimuthally_integrated.npz
