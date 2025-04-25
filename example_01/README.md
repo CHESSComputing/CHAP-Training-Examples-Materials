@@ -26,12 +26,13 @@ In this particular experiment, we are interested in finding out the intensity of
 
 ## Instructions
 
-1. Activate the conda environment. Open a terminal and run:
+1. Activate the conda environment. This ensures you will run the correct version of `python`, `CHAP`, and have all the extra third-party python modules available that are necessary for later steps in this example. Open a terminal and run:
     1. `source /nfs/chess/user/x-cite/miniconda3/bin/activate`
     1. `conda activate CHAP_example_01`
 
 1. Process the input data using `CHAP`. In the same terminal used in step 1:
     1. Navigate to your `CHAP-Training-Examples-Materials/example_01` directory
+    1. Inspect the contents of `pipline.yaml` by running `cat pipeline.yaml` -- this will print the contents of the file to your terminal. This file configures the CHAP pipeline you will run, so read the output. The file is meant to be human-readable, but don't expect to understand every detail. For now, just try to understand what the different pieces of the `pipeline` section are doing, how they fit together, and how the variables in the `config` section can be used to set the absolute locations of in/output files for the pipeline.
     1. Run the process: `CHAP pipeline.yaml` (this should take ~1min to complete)
     1. Check the output: `ls output`
         1.  Look for a file named `azimuthally_integrated.npz`
@@ -41,6 +42,7 @@ In this particular experiment, we are interested in finding out the intensity of
         ```bash
         python -m ipykernel install --user --name=chap_example_01 --display-name "CHAP_example_01"
         ```
+        This makes your active python environment avilable for _your_ use in the CLASSE JupyterHub. You will now be able to select this environment when running any notebook, meaning you will have access to the correct version of python and all the third-party modules you'll need for the notebook in this example. 
     1. (optional) We're now done using the terminal with this example, so deactivate the environment by running `conda deactivate; conda deactivate`. Close the terminal.
     1. In JupyterHub, navigate to the directory with the jupyter notebook:
         1. Double-click on CLASSE_shortcuts folder
