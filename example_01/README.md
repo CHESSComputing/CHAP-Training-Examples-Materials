@@ -13,9 +13,8 @@ The 2D diffraction patterns used as input data for this pipeline represent fairl
 $$n\lambda = 2d\sin{\theta}$$
 
 Where $n \in \mathbb{N}$, $\lambda$ is the wavelength of the incident beam, $d$ is the distance between crystal planes, and $\theta$ is the glancing angle of the incident beam relative to the sample's crystal planes.
-| ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Bragg_diffraction_2.svg/2560px-Bragg_diffraction_2.svg.png) | 
+| ![](https://github.com/keara-soloway/diagrams/blob/main/bragg_diffraction_screenshot_version.png) |
 |:--:| 
-| *By Hydrargyrum - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17543875* |
 | Illustration of Bragg diffraction. The lower ray has a path length which is $2dsin{\theta}$ longer than the upper ray. If the wavelength of the incident X-rays is equal to this value (or is a natural number multiple of it), then both rays leaving the sample have the same phase and will therefore constructively interfere with each other to produce a signal on the detector. Otherwise, the light rays will destructively interfere with each other and no signal will be produced on the detector. |
 
 Because the sample is a powder, the diffraction pattern captured by the detector shows _rings_ of diffracted X-rays because the sample contains grains whose crystal planes are oriented at all directions relative to the incident beam.
