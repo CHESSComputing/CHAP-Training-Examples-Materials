@@ -1,20 +1,43 @@
 # Example 02
 
 ## Description
+
+### Physics Motivation
+
+#### Tomographic reconstruction
+
+Tomography is a type of 3D imaging that uses some type of penetrative wave, in our case an X-ray beam. Tomographic reconstruction refers to the process of recovering 3D spatial information on an object from a set of projected images acquired under different angles after transmission of the beam through the sample.
+
+| ![](https://commons.wikimedia.org/w/index.php?curid=647797) |
+|:--:|
+| Illustration of tomographic reconstruction (https://en.wikipedia.org/wiki/Tomographic_reconstruction). The projected image on the detector results from transmission of the beam through the sample at a given angle at varying locations. The intensity at the detector depends on the amount of scattering and absorption in the sample or on, what is often called, its linear attenuation coefficient. Spatial variations in for example density can lead to spatial variations of the local attenuation coefficient. The intensity on the detector is basically a measure of its line integral along a path $AB$ at a projected sample position $r$. We can then obtain full 3D reconstruction of the spatial variation from a set of 2D images at varying angles $\theta$ by a mathematical inversion technique called the inverse Radon transform 
+(https://en.wikipedia.org/wiki/Radon_transform). |
+
+#### The input data
+
+A standard tomographic experiment at CHESS (and other similar institutions) consist of a set of X-ray transmission measurements captured on a 2D area detector. It typically involves two (sets of) measurements without a sample in the beam, one with the beam stop in place (the dark image), and one with the beam stop open (the bright image). Followed by a measurement of a stack of images (a tomographic image series) at varying rotation angle (over 180 or a full 360 degrees of rotation) with the sample in the beam secured to a rotating sample holder. Note that if the sample is larger than the beam cross section, this may require multiple image stacks at various sample positions in the plane perpendicular to the X-ray beam.
+
+#### Processing the data
+
 A standard tomographic reconstruction in CHAP consists of three steps:
-1. Reducing the data, i.e., correcting the raw detector images for background
+
+1. Reducing the raw data, i.e., correcting the raw detector images for background
 and non-uniformities in the beam intensity profile using dark and bright fields
-collected separately from the tomography image series.
+collected separately from the (multiple) tomography image series.
+
 1. Finding the calibrated rotation axis. Accurate reconstruction relies on
 accurately knowing the center of rotation at each data plane perpendicular to
 the rotation axis (the sinogram). This rotation axis is calibrated by selecting
 two data planes, one near the top and one near the bottom of the sample or
 beam, and visually or automatically picking the optimal center location.
+
 1. Reconstructing the reduced data for the calibrated rotation axis.
 For samples taller than the height of the beam, this last step can consist of
 two parts:
     - reconstruction of each individual stack of images, and
     - combining the individual stacks into one 3D reconstructed data set.
+
+Note that combining stacks with a horizontal displacement for samples wider than the width of the beam are not yet implemented.
 
 ## Instructions
 
@@ -96,3 +119,4 @@ As a demonstration of the reconstruction, there are also movies slicing through 
 1. Double-click on either `ruby_test` or `tick_test`.
 1. Double-click on `recon_z.gif`.
 1. Repeat for the other sample.
+
