@@ -1,19 +1,22 @@
 name: CHAP_example_02
 channels:
-  - astra-toolbox
   - conda-forge
-  - defaults
+  - astra-toolbox
+  - nodefaults
 dependencies:
-  - python>=3.9
-#  - chessanalysispipeline=0.0.15
+  - python>=3.9,<3.11
   - astra-toolbox==2.1.0
+#  - chessanalysispipeline
   - lmfit==1.1.0
-  - matplotlib==3.7.1
-  - nexusformat==1.0.2
-  - nexpy==1.0.4
-  - pip==22.3.1
-  - pydantic==1.10.7
+  - fabio==2024.9.0
+  - matplotlib==3.9.2
+  - mpi4py==4.0.0
+  - nexpy==1.0.9
+  - nexusformat==1.0.6
+  - pip==24.2
+  - pydantic==2.7.3
+  - sympy==1.12
   - tomopy==1.12.2
   - pip:
     - certif-pyspec==1.5.3
-
+#    - chess-scanparsers

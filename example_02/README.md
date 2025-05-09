@@ -8,10 +8,9 @@
 
 Tomography is a type of 3D imaging that uses some type of penetrative wave, in our case an X-ray beam. Tomographic reconstruction refers to the process of recovering 3D spatial information on an object from a set of projected images acquired under different angles after transmission of the beam through the sample.
 
-| ![](https://commons.wikimedia.org/w/index.php?curid=647797) |
+| ![](https://github.com/CHESSComputing/CHAP-Training-Examples-Materials/tree/main/example_02/images/Tomographic_fig1.png) |
 |:--:|
-| Illustration of tomographic reconstruction (https://en.wikipedia.org/wiki/Tomographic_reconstruction). The projected image on the detector results from transmission of the beam through the sample at a given angle at varying locations. The intensity at the detector depends on the amount of scattering and absorption in the sample or on, what is often called, its linear attenuation coefficient. Spatial variations in for example density can lead to spatial variations of the local attenuation coefficient. The intensity on the detector is basically a measure of its line integral along a path $AB$ at a projected sample position $r$. We can then obtain full 3D reconstruction of the spatial variation from a set of 2D images at varying angles $\theta$ by a mathematical inversion technique called the inverse Radon transform 
-(https://en.wikipedia.org/wiki/Radon_transform). |
+| Illustration of tomographic reconstruction (https://en.wikipedia.org/wiki/Tomographic_reconstruction). The projected image on the detector results from transmission of the beam through the sample at a given angle at varying locations. The intensity at the detector depends on the amount of scattering and absorption in the sample or on, what is often called, its linear attenuation coefficient. Spatial variations in for example density can lead to spatial variations of the local attenuation coefficient. The intensity on the detector is basically a measure of its line integral along a path $AB$ at a projected sample position $r$. We can then obtain full 3D reconstruction of the spatial variation from a set of 2D images at varying angles $\theta$ by a mathematical inversion technique called the inverse Radon transform  (https://en.wikipedia.org/wiki/Radon_transform). |
 
 #### The input data
 
@@ -119,4 +118,5 @@ As a demonstration of the reconstruction, there are also movies slicing through 
 1. Double-click on either `ruby_test` or `tick_test`.
 1. Double-click on `recon_z.gif`.
 1. Repeat for the other sample.
+
 
