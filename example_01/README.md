@@ -27,7 +27,7 @@ In this particular experiment, we are interested in finding out the intensity of
 ## Instructions
 1. Make a copy of this repository to your workspace on the CLASSE filesystem so you can explore and edit these files on your own. Run:
    ```
-   cp -r /nfs/chess/user/x-cite/save/CHAP-Training-Examples-Materials /nfs/chess/user/$USER/
+   cp -r /nfs/chess/user/x-cite/CHAP-Training-Examples-Materials /nfs/chess/user/$USER/
    ```
 1. Activate the conda environment. This ensures you will run the correct version of `python`, `CHAP`, and have all the extra third-party python modules available that are necessary for later steps in this example. Open a terminal and run:
     1. ```
