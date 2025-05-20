@@ -25,7 +25,10 @@ Because the sample is a powder, the diffraction pattern captured by the detector
 In this particular experiment, we are interested in finding out the intensity of the diffracted X-rays as a function of the radial coordinate going out from the center of the beam -- this can be used to find out things like the distance between the sample's crystal planes. We are _not_ interested in the intensity of diffracted X-rays as a function of the angular coodinate going around each ring -- this would tell us the relative amount of the sample's crystal planes which are oriented in a certain direction (but beacuse our sample is a powder composed of many grains each oriented in an arbitrary direction, there should be no systematic relationship between the angular coordinate around the beam and the intensity of a ring at that angle). So, we reduce each 2D diffraction pattern into a 1D signal by integrating over the angular coordinate in each image, leaving us with intensity as a function of the radial coordinate.
 
 ## Instructions
-
+1. Make a copy of this repository to your workspace on the CLASSE filesystem so you can explore and edit these files on your own. Run:
+   ```
+   cp -r /nfs/chess/user/x-cite/save/CHAP-Training-Examples-Materials /nfs/chess/user/$USER/
+   ```
 1. Activate the conda environment. This ensures you will run the correct version of `python`, `CHAP`, and have all the extra third-party python modules available that are necessary for later steps in this example. Open a terminal and run:
     1. ```
        source /nfs/chess/user/x-cite/miniconda3/bin/activate
