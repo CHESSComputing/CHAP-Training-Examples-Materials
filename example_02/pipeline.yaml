@@ -1,8 +1,7 @@
 config:
-  inputdir: input
-  outputdir: output
-  interactive: true
-  log_level: INFO
+  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
+  outputdir: ./output
+  interactive: false
 
 pipeline:
 
@@ -14,19 +13,18 @@ pipeline:
               station: id3a
               experiment_type: TOMO
               spec_scans:
-              - spec_file: ../data/hollow_pyramid/spec.log
+              - spec_file: data/hollow_pyramid/spec.log
                 scan_numbers:
                 - 1
             detector_names:
               - sim
             schema: darkfield
         - common.SpecReader:
-            inputdir: ../data/hollow_pyramid
             spec_config:
               station: id3a
               experiment_type: TOMO
               spec_scans:
-              - spec_file: spec.log
+              - spec_file: data/hollow_pyramid/spec.log
                 scan_numbers:
                 - 2
             detector_names:
@@ -44,13 +42,12 @@ pipeline:
 
   # Full tomography reconstruction
   - tomo.TomoDataProcessor:
-      reduce_data: True
-      find_center: True
-      reconstruct_data: True
-      combine_data: True
+      reduce_data: true
+      find_center: true
+      reconstruct_data: true
+      combine_data: true
       outputdir: saved_figs
       save_figs: 'only'
   - common.NexusWriter:
-      filename: combined_hollow_pyramid.nxs
+      filename: hollow_pyramid.nxs
       force_overwrite: true
-

@@ -1,9 +1,6 @@
 config:
-  inputdir: input
-  outputdir: data/hollow_pyramid
-  interactive: true
-  log_level: INFO
-  profile: false
+  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
+  outputdir: ./data/hollow_pyramid
 
 pipeline:
 
