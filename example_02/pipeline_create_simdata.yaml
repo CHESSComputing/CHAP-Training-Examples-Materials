@@ -1,6 +1,6 @@
 config:
   inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
-  outputdir: ./data/hollow_pyramid
+  outputdir: ./hollow_pyramid/data/hollow_pyramid
 
 pipeline:
 

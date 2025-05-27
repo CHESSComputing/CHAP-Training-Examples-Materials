@@ -104,7 +104,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
        CHAP pipeline_create_simdata.yaml
        ```
     1. After completion, you should have a data directory in your work directory with the SPEC data for a sample named "hollow_pyramid" of a simulated tomography experiment on a truncated hollow square pyramid on the CHESS id1a3 beamline.
-    1. Rerun step 3 from the main example above after editing the `pipeline.yaml` to point the `inputdir` to the new simulated data location (the `outputdir` in `pipeline_create_simdata.yaml`).
+    1. Rerun step 3 from the main example above after editing the `pipeline.yaml` to point the `inputdir` to the new simulated data base location `./hollow_pyramid`.
 
     1. The job's output will overwrite the existing data in the `output` directory. Check the date of the expected output file:
        ```
