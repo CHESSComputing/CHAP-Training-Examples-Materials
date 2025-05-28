@@ -130,7 +130,7 @@ case "hollow_pyramid".
 
 ## Real experiment example
 
-A full tomographic reconstruction from an actual CHESS experiment can easliy take half an hour or longer, requires a fair amount of computational resources and generates tens of GBs of data. It is therefore not suitable for the purpose of this tutorial. However, there is a fully reconstructed dataset available to view with `NeXpy` to illustate an example of an actual reconstructed sample measured here at CHESS on a tube filled with tiny ruby balls:
+A full tomographic reconstruction from an actual CHESS experiment can easliy take half an hour or longer, requires a fair amount of computational resources and generates tens of GBs of data. It is therefore not suitable for the purpose of this tutorial. However, there is a fully reconstructed dataset available to view with `NeXpy` to illustrate an example of an actual reconstructed sample measured here at CHESS on a tube filled with tiny ruby balls:
 
 1. Start `NeXpy` in a terminal as described in the step 1 of the second optional excersize above. This requires you again to have X11-forwarding enabled in your terminal.
     1. After the GUI pops up, click File-> Open and enter the following path in the File name box at the bottom: `/nfs/chess/user/x-cite/data/example_02/ruby_test`
@@ -145,9 +145,4 @@ A full tomographic reconstruction from an actual CHESS experiment can easliy tak
     1. These are just a few examples of how to view data within `NeXpy`, feel free to play around some more with other options.
 1. As an alternative to viewing the data in `NeXpy`, you can also open a Jupyter notebook in `JupyterHub` as explained in step 4 under the instructions for the main example above.
     1. After opening the Jupyter notebook, edit the second cell (`#load data`) and set `nxs_filename = /nfs/chess/user/x-cite/data/example_02/ruby_test/reconstructed.nxs`.
-    1. Double click on the base level `NXroot` field in the leftmost "NeXus Data" panel to view the reconstruction. Note that any cells using hardwired paths to the pyramid example are failing, but those using default paths still work as expected (advanced option: edit the hardwired paths to the correct location). Note also that the default range for plotting the cross-sections in the last cells is not very useful, add `vmin=-0.01, vmax=0.01` inside the braces of the `plot()` commands to change the range.
-
-
-
-
-
+    1. Double click on the base level `NXroot` field in the leftmost "NeXus Data" panel to view the reconstruction. Note that any cells using hardwired paths to the pyramid example are failing, but those using default paths still work as expected (advanced option: edit the hardwired paths to the correct location). Note also that the default range for plotting the cross-sections in the last cells is not very useful, add `vmin=-0.01, vmax=0.01` inside the braces of the `plot()` commands to change the range and rerun the cell.
