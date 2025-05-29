@@ -13,7 +13,7 @@ The 2D diffraction patterns used as input data for this pipeline represent fairl
 $$n\lambda = 2d\sin{\theta}$$
 
 Where $n \in \mathbb{N}$, $\lambda$ is the wavelength of the incident beam, $d$ is the distance between crystal planes, and $\theta$ is the glancing angle of the incident beam relative to the sample's crystal planes.
-| ![](https://github.com/keara-soloway/diagrams/blob/main/bragg_diffraction_screenshot_version.png) |
+| ![](https://github.com/CHESSComputing/CHAP-Training-Examples-Materials/blob/main/example_01/images/bragg_diffraction.png) |
 |:--:| 
 | Illustration of Bragg diffraction. The lower ray has a path length which is $2dsin{\theta}$ longer than the upper ray. If the wavelength of the incident X-rays is equal to this value (or is a natural number multiple of it), then both rays leaving the sample have the same phase and will therefore constructively interfere with each other to produce a signal on the detector. Otherwise, the light rays will destructively interfere with each other and no signal will be produced on the detector. |
 
