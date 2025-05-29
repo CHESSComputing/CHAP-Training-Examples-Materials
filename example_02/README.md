@@ -89,7 +89,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
     1. Select Kernel: choose CHAP_example_02
     1. Run the cells in order (click the right-triangle button or type Shift-Enter). Close the notebook tab when done.
 
-## Optional excersizes
+## Optional excercises
 
 1. Create the simulated tomography data as used in the main example above. In the same terminal used in step 1 and 2 of the main example instructions above:
     1. Navigate to your `CHAP-Training-Examples-Materials/example_02` work directory.
