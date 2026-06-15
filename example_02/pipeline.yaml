@@ -1,53 +1,102 @@
 config:
-  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
-  outputdir: ./output
+#  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
+  inputdir: hollow_pyramid
+  outputdir: output
   interactive: false
 
-pipeline:
+map:
 
   # Convert the CHESS style map
-  - pipeline.MultiplePipelineItem:
-      items:
-        - common.SpecReader:
-            spec_config:
-              station: id3a
-              experiment_type: TOMO
-              spec_scans:
-              - spec_file: data/hollow_pyramid/spec.log
-                scan_numbers:
-                - 1
-            detector_names:
-              - sim
-            schema: darkfield
-        - common.SpecReader:
-            spec_config:
-              station: id3a
-              experiment_type: TOMO
-              spec_scans:
-              - spec_file: data/hollow_pyramid/spec.log
-                scan_numbers:
-                - 2
-            detector_names:
-              - sim
-            schema: brightfield
-        - common.MapReader:
-            filename: map_id3a_pyramid.yaml
-            detector_names:
-              - sim
-            schema: tomofields
-        - common.YAMLReader:
-            filename: detector_pyramid.yaml
-            schema: tomo.models.Detector
+  - common.YAMLReader:
+      filename: detector_id1a3_pyramid.yaml
+      schema: common.models.map.DetectorConfig
+  - common.YAMLReader:
+      filename: map_id1a3_pyramid.yaml
+      schema: common.models.map.MapConfig
+  - common.MapProcessor:
+      schema: tomofields
+
+convert:
+
+  - common.SpecReader:
+      config:
+        station: id1a3
+        experiment_type: TOMO
+        spec_scans:
+        - spec_file: raw/hollow_pyramid/spec.log
+          scan_numbers: 1
+      detector_config:
+        detectors:
+          - id: sim
+      schema: darkfield
+  - common.SpecReader:
+      config:
+        station: id1a3
+        experiment_type: TOMO
+        spec_scans:
+        - spec_file: raw/hollow_pyramid/spec.log
+          scan_numbers: 2
+      detector_config:
+        detectors:
+          - id: sim
+      schema: brightfield
+  - common.YAMLReader:
+      filename: detector_pyramid.yaml
+      schema: tomo.models.Detector
   - tomo.TomoCHESSMapConverter
 
-  # Full tomography reconstruction
-  - tomo.TomoDataProcessor:
-      reduce_data: true
-      find_center: true
-      reconstruct_data: true
-      combine_data: true
-      outputdir: saved_figs
-      save_figs: 'only'
-  - common.NexusWriter:
-      filename: hollow_pyramid.nxs
+reduce:
+
+  # Data reduction
+  - tomo.TomoReduceProcessor:
+      save_figures: true
+  - tomo.TomoWriter:
+      filename: reduced_hollow_pyramid.nxs
+      force_overwrite: true
+  - common.ImageWriter:
+      outputdir: saved_figures
+      force_overwrite: true
+
+find_center:
+
+  - common.YAMLReader:
+      filename: find_center_id1a3.yaml
+      schema: tomo.models.TomoFindCenterConfig
+  - tomo.TomoFindCenterProcessor:
+      save_figures: true
+  - common.YAMLWriter:
+      filename: center_hollow_pyramid.yaml
+      force_overwrite: true
+      schema: tomo.models.TomoFindCenterConfig
+  - common.ImageWriter:
+      outputdir: saved_figures
+      force_overwrite: true
+
+recon:
+
+  - common.YAMLReader:
+      filename: reconstruct_data.yaml
+      schema: tomo.models.TomoReconstructConfig
+  - tomo.TomoReconstructProcessor:
+      save_figures: true
+  - tomo.TomoWriter:
+      filename: reconstructed_hollow_pyramid.nxs
+      force_overwrite: true
+  - common.ImageWriter:
+      outputdir: saved_figures
+      force_overwrite: true
+
+
+combine:
+
+  - common.YAMLReader:
+      filename: combine_data_id1a3.yaml
+      schema: tomo.models.TomoCombineConfig
+  - tomo.TomoCombineProcessor:
+      save_figures: true
+  - tomo.TomoWriter:
+      filename: combined_hollow_pyramid.nxs
+      force_overwrite: true
+  - common.ImageWriter:
+      outputdir: saved_figures
       force_overwrite: true
