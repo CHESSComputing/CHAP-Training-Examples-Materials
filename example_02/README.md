@@ -103,7 +103,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
 ## Optional excercises
 
 1. Create the simulated tomography data as used in the main example above. In the same terminal used for running the main example above:
-    1. If not still there, navigate to your `CHAP-Training-Examples-Materials/example_02` work directory (step 3 in the main example).
+    1. If not still there, navigate to your `CHAP-Training-Examples-Materials/example_02` work directory (step 3i in the main example) and if not yet active, activate the conda environment again (step 4i and 4ii in the main example).
     1. Inspect the contents of `pipeline_create_simdata.yaml` by running:
        ```
        cat pipeline_create_simdata.yaml
