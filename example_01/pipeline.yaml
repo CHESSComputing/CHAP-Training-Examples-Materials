@@ -1,9 +1,11 @@
 config:
   inputdir: /nfs/chess/user/x-cite/data/example_01/h5
-  outputdir: ./output
+  outputdir: output
+
 pipeline:
+
   - common.FabioImageReader:
-      filename: detector_data_*.h5
+      filename: /nfs/chess/user/x-cite/data/example_01/h5/detector_data_*.h5
       frame: 5
   - common.PyfaiAzimuthalIntegrationProcessor:
       poni_file: detector_calib.poni

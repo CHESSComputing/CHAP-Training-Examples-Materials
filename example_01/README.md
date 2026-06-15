@@ -48,23 +48,23 @@ In this particular experiment, we are interested in finding out the intensity of
        - How do the variables in the `config` section set the absolute locations of in/output files?
        - What does each item in the `pipeline` section do (specifically: what do they do to the _data_ being used in the pipeline)?
        - Which files are data being read from / written to, and what kind of data are being read / written there?
+
+1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)
     1. Run the pipeline (this step should take ~1min to complete; watch the logging output in the terminal for indication of progress):
        ```
-       CHAP pipeline.yaml
+       /nfs/chess/user/x-cite/CHAP_diffraction pipeline.yaml
        ```
     1. Check that the expected output (`output/azimuthally_integrated.npz`) is present:
        ```
        ls output
        ```
-
-1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)
     1. Add the conda environment as a jupyter kernel. This makes the active python environment in your terminal avilable for _your_ use on the CLASSE JupyterHub -- you will be able to select this environment when running any notebook, meaning you will have access to the correct version of python and all the third-party modules you'll need for the notebook in this example. In the same terminal used in step 1 and 2, run:
         ```bash
-        python -m ipykernel install --user --name=chap_example_01 --display-name "CHAP_example_01"
+        python -m ipykernel install --user --name=xcite_example_01 --display-name "XCite_example_01"
         ```
         Make sure you see the following message in the terminal after running this command:
        ```
-       Installed kernelspec chap_example_01 in /home/{user}/.local/share/jupyter/kernels/chap_example_01
+       Installed kernelspec xcite_example_01 in /home/{user}/.local/share/jupyter/kernels/xcite_example_01
        ```
        If other output is present before this message, it can be ignored.
     1. (optional) We're now done using the terminal with this example, so deactivate the environment by running `conda deactivate; conda deactivate`. Close the terminal.
