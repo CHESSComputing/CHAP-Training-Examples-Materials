@@ -7,10 +7,10 @@ map:
 
   # Convert the CHESS style map
   - common.YAMLReader:
-      filename: detector_id1a3_pyramid.yaml
+      filename: config/detector_id1a3_pyramid.yaml
       schema: common.models.map.DetectorConfig
   - common.YAMLReader:
-      filename: map_id1a3_pyramid.yaml
+      filename: config/map_id1a3_pyramid.yaml
       schema: common.models.map.MapConfig
   - common.MapProcessor:
       schema: tomofields
@@ -40,7 +40,7 @@ convert:
           - id: sim
       schema: brightfield
   - common.YAMLReader:
-      filename: detector_pyramid.yaml
+      filename: config/detector_pyramid.yaml
       schema: tomo.models.Detector
   - tomo.TomoCHESSMapConverter
 
@@ -59,7 +59,7 @@ reduce:
 find_center:
 
   - common.YAMLReader:
-      filename: find_center_id1a3.yaml
+      filename: config/find_center_id1a3.yaml
       schema: tomo.models.TomoFindCenterConfig
   - tomo.TomoFindCenterProcessor:
       save_figures: true
@@ -74,7 +74,7 @@ find_center:
 recon:
 
   - common.YAMLReader:
-      filename: reconstruct_data.yaml
+      filename: config/reconstruct_data.yaml
       schema: tomo.models.TomoReconstructConfig
   - tomo.TomoReconstructProcessor:
       save_figures: true
@@ -89,7 +89,7 @@ recon:
 combine:
 
   - common.YAMLReader:
-      filename: combine_data_id1a3.yaml
+      filename: config/combine_data_id1a3.yaml
       schema: tomo.models.TomoCombineConfig
   - tomo.TomoCombineProcessor:
       save_figures: true
