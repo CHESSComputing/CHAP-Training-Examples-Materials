@@ -63,7 +63,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
        - Which files are data being read from/written to, and what kind of data are being read/written there?
     1. Run the pipeline (this step should take ~1 min to complete; watch the logging output in the terminal for indication of progress):
        ```
-       ./CHAP_tomo pipeline.yaml
+       /nfs/chess/user/x-cite/CHAP_tomo pipeline.yaml
        ```
     1. Check that the expected output (`output/combined_hollow_pyramid.nxs`) is present:
        ```
@@ -112,7 +112,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
        - Check again, how the variables in the `config` section set the locations of in/output files.
     1. Run the simulation (repeat step 3 in the main example if you deactivated your conda environment):
        ```
-       ./CHAP_tomo pipeline_create_simdata.yaml
+       /nfs/chess/user/x-cite/CHAP_tomo pipeline_create_simdata.yaml
        ```
     1. After completion, you should have a `raw` directory under the `hollow_pyramid` directory of your work directory with the `SPEC` data for a sample named "hollow_pyramid" for a simulated tomography experiment on a truncated hollow square pyramid on the CHESS id1a3 beamline.
     1. Rerun step 3 from the main example above after editing the `pipeline.yaml` to point the `inputdir` to the new simulated data base location `./hollow_pyramid`.

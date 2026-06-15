@@ -1,6 +1,5 @@
 config:
-#  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
-  inputdir: hollow_pyramid
+  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
   outputdir: output
   interactive: false
 

@@ -1,6 +1,5 @@
 config:
-#  inputdir: /nfs/chess/user/x-cite/data/example_02/hollow_pyramid
-  inputdir: /nfs/chess/user/rv43/repos/CHESSComputing/CHAP-Training-Examples-Materials/example_02/hollow_pyramid
+  inputdir: hollow_pyramid/config
   outputdir: hollow_pyramid/raw/hollow_pyramid
 
 pipeline:
