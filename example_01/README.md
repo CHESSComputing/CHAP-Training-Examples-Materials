@@ -30,13 +30,6 @@ In this particular experiment, we are interested in finding out the intensity of
    ```
    cp -r /nfs/chess/user/x-cite/CHAP-Training-Examples-Materials /nfs/chess/user/$USER/
    ```
-1. Activate the conda environment. This ensures you will run the correct version of `python`, `CHAP`, and have all the extra third-party python modules available that are necessary for later steps in this example. Open a terminal and run:
-    1. ```
-       source /nfs/chess/user/x-cite/miniconda3/bin/activate
-       ```
-    1. ```
-       conda activate CHAP_example_01
-       ```
 
 1. Process the input data using `CHAP`. In the same terminal used in step 1:
     1. Navigate to your `CHAP-Training-Examples-Materials/example_01` directory
@@ -48,8 +41,6 @@ In this particular experiment, we are interested in finding out the intensity of
        - How do the variables in the `config` section set the absolute locations of in/output files?
        - What does each item in the `pipeline` section do (specifically: what do they do to the _data_ being used in the pipeline)?
        - Which files are data being read from / written to, and what kind of data are being read / written there?
-
-1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)
     1. Run the pipeline (this step should take ~1min to complete; watch the logging output in the terminal for indication of progress):
        ```
        /nfs/chess/user/x-cite/CHAP_diffraction pipeline.yaml
@@ -58,7 +49,17 @@ In this particular experiment, we are interested in finding out the intensity of
        ```
        ls output
        ```
-    1. Add the conda environment as a jupyter kernel. This makes the active python environment in your terminal avilable for _your_ use on the CLASSE JupyterHub -- you will be able to select this environment when running any notebook, meaning you will have access to the correct version of python and all the third-party modules you'll need for the notebook in this example. In the same terminal used in step 1 and 2, run:
+       
+1. Visualize the input and output data used in this example with `matplotlib` (via a Jupyter notebook)
+    1. Activate the conda environment. This ensures you will run the correct version of `Python`, `CHAP`, and have all the extra third-party `Python` modules available that are necessary for later steps in this example. In the same terminal used in step 1 to 3, run:
+       ```
+       source /nfs/chess/sw/CHESS-software-releases/AlmaLinux/9.6/glibc-2.34/conda/miniforge3/CHAP_v2026.04.28/bin/activate
+       ```
+    1. followed by
+       ```
+       conda activate XCite_example_02
+       ```
+    1. Add the conda environment as a Jupyter kernel. This makes the active python environment in your terminal avilable for _your_ use on the CLASSE JupyterHub -- you will be able to select this environment when running any notebook, meaning you will have access to the correct version of python and all the third-party modules you'll need for the notebook in this example. Run:
         ```bash
         python -m ipykernel install --user --name=xcite_example_01 --display-name "XCite_example_01"
         ```
@@ -68,10 +69,10 @@ In this particular experiment, we are interested in finding out the intensity of
        ```
        If other output is present before this message, it can be ignored.
     1. (optional) We're now done using the terminal with this example, so deactivate the environment by running `conda deactivate; conda deactivate`. Close the terminal.
-    1. In the [CLASSE JupyterHub](https://jupyterhub.classe.cornell.edu), navigate to the directory with the jupyter notebook:
+    1. In the [CLASSE JupyterHub](https://jupyterhub.classe.cornell.edu), navigate to the directory with the Jupyter notebook:
         1. Double-click on CLASSE_shortcuts folder
         1. Double-click on chess_[username] folder: This is a softlink to `/nfs/chess/user/[username]`
         1. Double-click on CHAP-Training-Examples-Materials -> example_01
     1. Open the notebook by double-clicking on visualize.ipynb
-    1. Select Kernel: choose CHAP_example_01
+    1. Select Kernel: choose XCite_example_01
     1. Run the cells in order (click the right-triangle button or type Shift-Enter), complete the optional exercises, and the notebook close tab when done.
