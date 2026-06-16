@@ -57,7 +57,7 @@ In this particular experiment, we are interested in finding out the intensity of
        ```
     1. followed by
        ```
-       conda activate XCite_example_02
+       conda activate XCite_example_01
        ```
     1. Add the conda environment as a Jupyter kernel. This makes the active python environment in your terminal avilable for _your_ use on the CLASSE JupyterHub -- you will be able to select this environment when running any notebook, meaning you will have access to the correct version of python and all the third-party modules you'll need for the notebook in this example. Run:
         ```bash
