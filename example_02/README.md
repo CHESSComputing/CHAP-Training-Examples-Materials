@@ -42,7 +42,7 @@ Note that combining stacks with a horizontal displacement for samples wider than
 
 1. Although the following excercises are not time or memory consuming it is a good habbit to perform computations on the [CHESS Compute Farm](https://wiki.classe.cornell.edu/Computing/ComputeFarmIntro) rather than on the login node (lnx201). You can directly submit jobs or scripts to run on the Compute Farm, or you can open an interactive prompt as we will do here. To login on an interactive node on the Compute Farm run:
    ```
-   qrsh -q chess_interactive.q
+   qrsh
    ```
    and provide your CLASSE credentials if you do not already have an active valid Kerberos token.
 1. Make a copy of this repository to your workspace on the CLASSE filesystem so you can explore and edit these files on your own. Run:
